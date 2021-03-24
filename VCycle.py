@@ -31,7 +31,8 @@ class VCycleSolver:
     tab0 = Tab()
     Debug.msg1(verb, tab0, 'Setup for VCycle solve')
     # Produce sequence of coarsened operators
-    self.ops = self.refSeq.makeMatrixSequence(A)
+    self.refSeq.makeMatrixSequence(A)
+    self.ops = self.refSeq.seqA
 
     # Construct the smoothers at each level
     self.smoothers = self.numLevels * [None]
